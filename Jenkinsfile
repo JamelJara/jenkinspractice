@@ -1,14 +1,14 @@
 pipeline {
     environment {
-        imagename = "yarlov21/jenkinspractice"
-        registryCredential = "jenkins_docker"
+        imagename = "jj2023/jenkinspractice"
+        registryCredential = "jenkins_github"
         dockerimage = ''
     }
     agent any
     stages {
         stage('Cloning Git') {
             steps {
-                git([url: 'https://github.com/yared-shewarade/jenkinspractice.git', branch:'main', credentialsId: 'jenkins_ssh_key'])
+                git([url: 'https://github.com/JamelJara/jenkinspractice.git', branch:'main', credentialsId: 'jenkins_github_key'])
             }
         }
         stage('Building image') {
